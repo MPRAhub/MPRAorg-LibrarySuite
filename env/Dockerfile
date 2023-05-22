@@ -16,7 +16,8 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 USER $NB_UID
 RUN R -e 'BiocManager::install("scater", dependencies=TRUE)'
-
+RUN R -e "install.packages(c('paws.storage', 'urltools', 'testthat'), dependencies=TRUE)"
+RUN R -e "BiocManager::install('MPRAnalyze')"
 
 RUN pip install --user pytest
 RUN pip install --user synapseclient
