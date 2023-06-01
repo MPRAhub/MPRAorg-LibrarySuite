@@ -19,8 +19,6 @@ For more information, please review our onboarding documentation for a smooth in
 
 Once you've completed the prerequiste accounts, please clone the MPRAorg-LibrarySuite repository:
 
-**TODO**: Add estimated file cache size
-
 ```bash
 git clone git@github.com:MPRAhub/MPRAorg-LibrarySuite.git
 cd MPRAorg-LibrarySuite
