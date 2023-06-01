@@ -9,7 +9,7 @@ Before proceeding with the installation, please ensure that you have fulfilled m
 
 * [GitHub](https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home): required to create & add their public ssh key.
 
-* [Synapse](https://www.synapse.org/): required to complete certification and email andrew.blair@ucsf.edu to request addition to the Synapse project workspace.
+* [Synapse](https://www.synapse.org/): required to complete certification and create a Git issue to request addition to the Synapse project workspace.
 
 * [Docker](https://www.docker.com/): (optionally) required to have a Docker account, which will enable you to pull the MPRAbase Docker image from the Synapse registry.
 
