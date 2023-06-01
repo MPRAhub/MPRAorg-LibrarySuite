@@ -9,7 +9,7 @@ Before proceeding with the installation, please ensure that you have fulfilled m
 
 * [GitHub](https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home): required to create & add their public ssh key.
 
-* [Synapse](https://www.synapse.org/): required to complete certification and email <> to request addition to the project.
+* [Synapse](https://www.synapse.org/): required to complete certification and email andrew.blair@ucsf.edu to request addition to the Synapse project workspace.
 
 * [Docker](https://www.docker.com/): (optionally) required to have a Docker account, which will enable you to pull the MPRAbase Docker image from the Synapse registry.
 
@@ -39,26 +39,27 @@ python3 run-local-MPRAbase.py --container_port 8888 --host_port 8888 \
 
 ### High Performance Compute (HPC) cluster
 
-For users on a High Performance Compute (HPC) cluster, we also provide a Singularity definition file and bash script called **build-singularity-sif.sh**, which builds the Singularity Image Format (SIF) file for the iSEE-MPRAbase Singularity container.
+For users on a High Performance Compute (HPC) cluster, we also provide a Singularity definition file and bash script called **build-singularity-sif.sh**, which builds the Singularity Image Format (SIF) file for the MPRAhub Singularity container.
 
 ```bash
 cd MPRAorg-LibrarySuite/env
 bash build-MPRAbase-sif.sh
 ```
 
-After building the MPRAbase SIF, navigate to the MPRAbase working directory and launch an instance with **run-hpc-MPRAbase.py**.
+After building the MPRAbase SIF, navigate to the working directory and launch the JupyterLab workspace with **run-hpc-MPRAbase.py**.
 
 ```bash
 cd MPRAorg-LibrarySuite/
-python3 run-hpc-MPRAbase.py  --container_port 9595 --local_dir_mount /local/dir/path --sif env/MPRAbase.sif
+python3 run-hpc-MPRAbase.py  --container_port 9595 --local_dir_mount /local/dir/path \
+--sif env/MPRAbase.sif
 ```
 
 ## Install MPRAbase Developer Dependencies
 
-In a running MPRAbase JupyterLab container, open a terminal and follow these commands:
+In a running MPRAbase JupyterLab (Singularity) container, open a terminal and follow these commands:
 
 ```bash
-$ cd /home/jovyan/
+$ cd /home/jovyan/ # Assumes user launched a JupyterLab workspace using the Singularity MPRAbase SIF
 $ Rscript build-iSEEindex-fork.R
 ```
 
