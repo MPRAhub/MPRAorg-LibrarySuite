@@ -54,13 +54,13 @@ python3 run-hpc-MPRAhub.py  --container_port 9595 --local_dir_mount /local/dir/p
 --sif env/MPRAhub.sif
 ```
 
-## Install MPRAbase Developer Dependencies
+## Install iSEE-MPRAbase Developer Dependencies
 
 In the MPRAhub Singularity container running a JupyterLab workspace, open a terminal and follow these commands to install our iSEEindex fork for launching iSEE-MPRAbase instances:
 
 ```bash
-$ cd /home/jovyan/ # Assumes user launched a JupyterLab workspace using the Singularity MPRAbase SIF
-$ Rscript build-iSEEindex-fork.R
+cd /home/jovyan/ # Assumes user launched a JupyterLab workspace using the Singularity MPRAbase SIF
+Rscript build-iSEEindex-fork.R
 ```
 
 After a successful iSEEindex installation, open the following Jupyter Notebook and execute all of the cells: 
@@ -76,6 +76,6 @@ Finally, paste the link in your browser search bar: http://0.0.0.0:3838/
 In the MPRAhub Singularity container running a JupyterLab workspace, open a terminal and follow these commands:
 
 ```bash
-$ cd /home/jovyan/
-$ Rscript build-MPRAbase-API.R
+cd /home/jovyan/
+Rscript build-MPRAbase-API.R
 ```
