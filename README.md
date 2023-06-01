@@ -28,35 +28,35 @@ bash build-MPRAhub.sh
 ## Setup JupyterLab Workspace for MPRAhub
 ### Local
 
-To setup a JupyterLab workspace for MPRAhub, users can hit the ground running with the MPRAbase Docker container. We provide a Python executable called **run-local-MPRAbase.py**, which will launch a Docker container with user provided command line arguments. Here is an example:
+To setup a JupyterLab workspace for MPRAhub, users can hit the ground running with the MPRAbase Docker container. We provide a Python executable called **run-local-MPRAhub.py**, which will launch a Docker container with user provided command line arguments. Here is an example:
 
 ```bash
 cd MPRAorg-LibrarySuite
-python3 run-local-MPRAbase.py --container_port 8888 --host_port 8888 \
+python3 run-local-MPRAhub.py --container_port 8888 --host_port 8888 \
 --iSEE_MPRAbase_container_port 3838 --iSEE_MPRAbase_host_port 3838 \
 --local_dir_mount /local/dir/path --image docker.synapse.org/syn51118207/mprabase:arm64-v0.1.1
 ```
 
 ### High Performance Compute (HPC) cluster
 
-For users on a High Performance Compute (HPC) cluster, we also provide a Singularity definition file and bash script called **build-singularity-sif.sh**, which builds the Singularity Image Format (SIF) file for the MPRAhub Singularity container.
+For users on a High Performance Compute (HPC) cluster, we also provide a Singularity definition file and bash script called **build-MPRAbhub-sif.sh** to build the Singularity Image Format (SIF) file.
 
 ```bash
 cd MPRAorg-LibrarySuite/env
-bash build-MPRAbase-sif.sh
+bash build-MPRAbhub-sif.sh
 ```
 
-After building the MPRAbase SIF, navigate to the working directory and launch the JupyterLab workspace with **run-hpc-MPRAbase.py**.
+After building the MPRAhub SIF, navigate to the working directory and launch the JupyterLab workspace using **run-hpc-MPRAhub.py**.
 
 ```bash
 cd MPRAorg-LibrarySuite/
-python3 run-hpc-MPRAbase.py  --container_port 9595 --local_dir_mount /local/dir/path \
---sif env/MPRAbase.sif
+python3 run-hpc-MPRAhub.py  --container_port 9595 --local_dir_mount /local/dir/path \
+--sif env/MPRAhub.sif
 ```
 
 ## Install MPRAbase Developer Dependencies
 
-In a running MPRAbase JupyterLab (Singularity) container, open a terminal and follow these commands:
+In the MPRAhub Singularity container running a JupyterLab workspace, open a terminal and follow these commands to install our iSEEindex fork for launching iSEE-MPRAbase instances:
 
 ```bash
 $ cd /home/jovyan/ # Assumes user launched a JupyterLab workspace using the Singularity MPRAbase SIF
@@ -71,10 +71,9 @@ MPRAhub/MPRAbase/notebooks/demo-MRAbase-v0.1.1.ipynb
 
 Finally, paste the link in your browser search bar: http://0.0.0.0:3838/
 
-# MPRAbase API Development (**WorkAround**) 
+## Install MPRAbase Bioconductor Library for Developers
 
-
-In a running MPRAbase JupyterLab container, open a terminal and follow these commands:
+In the MPRAhub Singularity container running a JupyterLab workspace, open a terminal and follow these commands:
 
 ```bash
 $ cd /home/jovyan/
