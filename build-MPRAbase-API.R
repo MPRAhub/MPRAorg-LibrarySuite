@@ -1,8 +1,10 @@
 library("devtools")
 library("roxygen2")
+library("usethis")
 
 setwd("/home/jovyan/MPRAhub/MPRAbase")
 document()
 
 setwd("../")
-usethis::create_package("MPRAbase")
+options(usethis.ask.default = FALSE)
+devtools::install("MPRAbase")
