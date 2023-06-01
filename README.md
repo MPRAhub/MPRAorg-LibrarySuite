@@ -3,7 +3,7 @@
 # MPRAorg-LibrarySuite
 MPRAorg-LibrarySuite provides a comprehensive collection of libraries and tools for analyzing and sharing MPRA data.
 
-# Prerequistes 
+# Prerequistes & Installation
 
 Before proceeding with the installation, please ensure that you have fulfilled making the following accounts:
 
@@ -16,8 +16,6 @@ Before proceeding with the installation, please ensure that you have fulfilled m
 * [Singularity](https://cloud.sylabs.io/?_gl=1*zlt1gk*_ga*MTU1Mzg2OTQxNy4xNjg0MTkxMzM5*_ga_X710KLJKK6*MTY4NDE5MTMzOS4xLjEuMTY4NDE5MTM0Ni4wLjAuMA..&_ga=2.118074254.606116961.1684191339-1553869417.1684191339): (optionally) required to have a Synapse account if you are operating on a high performance compute cluster without root access.
 
 For more information, please review our onboarding documentation for a smooth installation ([link here](https://docs.google.com/document/d/1d23PDeozSP36U-4aWNFhE1knIbZ2HUiWTan9AsKQ-KY/edit?usp=sharing)).
-
-# Installation
 
 Once you've completed the prerequiste accounts, please clone the MPRAorg-LibrarySuite repository:
 
