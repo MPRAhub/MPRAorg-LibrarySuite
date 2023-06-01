@@ -29,12 +29,13 @@ cd MPRAorg-LibrarySuite
 bash build-MPRAhub.sh
 ```
 
+## Setup JupyterLab Workspace for MPRAhub
 ### Local
 
-To run a local instance of iSEE MPRAbase, users can hit the ground running with the MPRAbase Docker container. We even have a Python script for you called **run-local-MPRAbase.py**, with an example command below.
+To setup a JupyterLab workspace for MPRAhub, users can hit the ground running with the MPRAbase Docker container. We provide a Python executable called **run-local-MPRAbase.py**, that can be 
 
 ```bash
-cd MPRAbase
+cd MPRAorg-LibrarySuite
 python3 run-local-MPRAbase.py --container_port 8888 --host_port 8888 \
 --iSEE_MPRAbase_container_port 3838 --iSEE_MPRAbase_host_port 3838 \
 --local_dir_mount /local/dir/path --image docker.synapse.org/syn51118207/mprabase:arm64-v0.1.1

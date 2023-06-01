@@ -1,0 +1,36 @@
+Bootstrap: docker
+From: jupyter/datascience-notebook:latest
+
+%labels
+    Maintainer="Andrew Blair andrew.blair@ucsf.edu"
+
+%environment
+    LANG=en_US.UTF-8
+    LC_ALL=en_US.UTF-8
+
+%post
+    R -e "install.packages('BiocManager', repos='http://cran.us.r-project.org')"
+    R -e "install.packages(c('tidyr', 'dplyr'), repos='http://cran.us.r-project.org')"
+    R -e "install.packages(c('dbplyr', 'RSQLite', 'DBI'), repos='http://cran.us.r-project.org')"
+    R -e "BiocManager::install(c('SummarizedExperiment','BiocStyle','iSEE', 'BSgenome.Hsapiens.UCSC.hg38', 'BSgenome.Hsapiens.UCSC.hg19'), dependencies=TRUE)"
+    R -e "install.packages(c('roxygen2','devtools'), repos='http://cran.us.r-project.org')"
+    R -e "BiocManager::install(c('MultiAssayExperiment'), dependencies=TRUE)"
+    R -e "install.packages('synapser', repos = c('http://ran.synapse.org', 'http://cran.fhcrc.org'))"   
+    
+    apt-get update && \
+    apt-get install -y libcairo2-dev && \
+    rm -rf /var/lib/apt/lists/*
+
+    R -e 'BiocManager::install("scater", dependencies=TRUE)'
+    R -e 'BiocManager::install("iSEE/iSEEhub")'
+    R -e 'BiocManager::install("iSEE/iSEEindex")'
+    R -e 'BiocManager::install("ExperimentHub")'
+    pip install pytest
+    pip install synapseclient
+    conda update conda
+    conda install -c conda-forge pandoc
+    conda create -c bioconda -n snakemake snakemake
+    conda install -c bioconda sra-tools
+    pip install voila
+    jupyter labextension install @voila-dashboards/jupyterlab-preview
+
