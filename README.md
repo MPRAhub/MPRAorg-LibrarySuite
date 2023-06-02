@@ -43,7 +43,7 @@ For users on a High Performance Compute (HPC) cluster, we also provide a Singula
 
 ```bash
 cd MPRAorg-LibrarySuite/env
-bash build-MPRAbhub-sif.sh
+bash MPRAhub-build-sif.sh
 ```
 
 After building the MPRAhub SIF, navigate to the working directory and launch the JupyterLab workspace using **run-hpc-MPRAhub.py**.
