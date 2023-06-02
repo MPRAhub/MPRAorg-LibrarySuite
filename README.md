@@ -46,7 +46,7 @@ cd MPRAorg-LibrarySuite/env
 bash MPRAhub-build-sif.sh
 ```
 
-We assume HPC users are required to ssh tunnel to a devolpment or compute node to launch an interactive JupyterLab workspace. Here's an example ssh tunnel command for UCSF's HPC where the user is running the Jupyter Lab workspace on **dev1**:
+We assume HPC users are required to ssh tunnel to a devolpment or compute node to launch an interactive Jupyter Lab workspace. Here's an example ssh tunnel command for UCSF's HPC where the user is running the Jupyter Lab workspace on **dev1**:
 
 ```bash
 ssh mprahub_user@dev1.wynton.ucsf.edu -J mprahub_user@log1.wynton.ucsf.edu \
