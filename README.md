@@ -2,9 +2,7 @@
 
 
 [![GitHub
-issues](https://img.shields.io/github/issues/MPRAhub/MPRAorg-LibrarySuite)](https://github.com/MPRAhub/MPRAorg-LibrarySuite/issues)
-
-![BuildStatus-MPRAhub](https://github.com/MPRAhub/MPRAorg-LibrarySuite/actions/workflows/build-MPRAhub.yml/badge.svg?event=push)
+issues](https://img.shields.io/github/issues/MPRAhub/MPRAorg-LibrarySuite)](https://github.com/MPRAhub/MPRAorg-LibrarySuite/issues) ![BuildStatus-MPRAhub](https://github.com/MPRAhub/MPRAorg-LibrarySuite/actions/workflows/build-MPRAhub.yml/badge.svg?event=push)
 
 <!-- badges: end -->
 
