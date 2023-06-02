@@ -1,4 +1,5 @@
 MPRAhub/*
+env/*.sif
 
 # R packaging
 .Rproj.user
