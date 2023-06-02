@@ -46,7 +46,7 @@ cd MPRAorg-LibrarySuite/env
 bash MPRAhub-build-sif.sh
 ```
 
-We assume HPC users are required to ssh tunnel to a devolpment or compute node to launch an interactive JupyterLab workspace. Here's an example ssh tunnel command for UCSF's HPC:
+We assume HPC users are required to ssh tunnel to a devolpment or compute node to launch an interactive JupyterLab workspace. Here's an example ssh tunnel command for UCSF's HPC where the user is running the Jupyter Lab workspace on **dev1**:
 
 ```bash
 ssh mprahub_user@dev1.wynton.ucsf.edu -J mprahub_user@log1.wynton.ucsf.edu \
@@ -54,7 +54,7 @@ ssh mprahub_user@dev1.wynton.ucsf.edu -J mprahub_user@log1.wynton.ucsf.edu \
 -L <host port iSEE MPRAbase>:localhost:<container port iSEE MPRAbase>
 ```
 
-For a specific example for **mprahub_user**, we set **9797** as the local host port to access Jupyter Lab on a user's local web browser, and **9595** as the container port to allow the user to access the Jupyter Lab workspace on the local host port. Finally, we set **3838** as the local host and container port to access an iSEE MPRAbase instance that was launched in the Jupyter Lab workspace.
+For a specific example for **mprahub_user**, we set **9797** as the local host port to access Jupyter Lab on a user's local web browser and **9595** as the container port to allow the user to access the Jupyter Lab workspace on the local host port. Finally, we set **3838** as the local host and container port to access an iSEE MPRAbase instance that was launched in the Jupyter Lab workspace.
 
 
 ```bash
