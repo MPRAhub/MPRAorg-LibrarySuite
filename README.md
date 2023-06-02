@@ -1,4 +1,13 @@
+<!-- badges: start -->
+
+[![GitHub
+Issues](https://img.shields.io/github/issues/MPRAhub/MPRAorg-LibrarySuite)](https://github.com/MPRAhub/iSEEhub/MPRAorg-LibrarySuite)
+
 ![BuildStatus-MPRAhub](https://github.com/MPRAhub/MPRAorg-LibrarySuite/actions/workflows/build-MPRAhub.yml/badge.svg?event=push)
+
+<!-- badges: end -->
+
+
 
 # MPRAorg-LibrarySuite
 MPRAorg-LibrarySuite provides a comprehensive collection of libraries and tools for analyzing and sharing MPRA data.
