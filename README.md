@@ -39,24 +39,39 @@ python3 run-local-MPRAhub.py --container_port 8888 --host_port 8888 \
 
 ### High Performance Compute (HPC) cluster
 
-For users on a High Performance Compute (HPC) cluster, we also provide a Singularity definition file and bash script called **build-MPRAbhub-sif.sh** to build the Singularity Image Format (SIF) file.
+For users on a High Performance Compute (HPC) cluster, we also provide a Singularity definition file and bash script called **build-MPRAbhub-sif.sh** to build the Singularity Image Format (SIF) file. We recommend using a Linux Screen session when building the MPRAhub.sif file, because the estimated build time is one hour.
 
 ```bash
 cd MPRAorg-LibrarySuite/env
 bash MPRAhub-build-sif.sh
 ```
 
-After building the MPRAhub SIF, navigate to the working directory and launch the JupyterLab workspace using **run-hpc-MPRAhub.py**.
+We assume HPC users are required to ssh tunnel to a devolpment or compute node to launch an interactive JupyterLab workspace. Here's an example ssh tunnel command for UCSF's HPC:
+
+```bash
+ssh mprahub_user@dev1.wynton.ucsf.edu -J mprahub_user@log1.wynton.ucsf.edu \
+-L <host port Jupyter Lab>:localhost:<container port Jupyter Lab> \
+-L <host port iSEE MPRAbase>:localhost:<container port iSEE MPRAbase>
+```
+
+For a specific example for **mprahub_user**, we set **9797** as the local host port to access Jupyter Lab on a user's local web browser, and **9595** as the container port to allow the user to access the Jupyter Lab workspace on the local host port. Finally, we set **3838** as the local host and container port to access an iSEE MPRAbase instance that was launched in the Jupyter Lab workspace.
+
+
+```bash
+ssh mprahub_user@dev1.wynton.ucsf.edu -J mprahub_user@log1.wynton.ucsf.edu -L 9797:localhost:9595 -L 3838:localhost:3838
+```
+
+After users ssh tunnel into the HPC and build the MPRAhub SIF file, navigate to the MPRAorg-LibrarySuite (working) directory and launch the Jupyter Lab workspace using **run-hpc-MPRAhub.py**. Please note, the local directory mount for the Jupyter Lab workspace should be the full path to the MPRAorg-LibrarySuite (working) directory.
 
 ```bash
 cd MPRAorg-LibrarySuite/
-python3 run-hpc-MPRAhub.py  --container_port 9595 --local_dir_mount /local/dir/path \
+python3 run-hpc-MPRAhub.py  --container_port 9595 --local_dir_mount /local/path/to/MPRAorg-LibrarySuite \
 --sif env/MPRAhub.sif
 ```
 
 ## Install iSEE-MPRAbase Developer Dependencies
 
-In the MPRAhub Singularity container running a JupyterLab workspace, open a terminal and follow these commands to install our iSEEindex fork for launching iSEE-MPRAbase instances:
+In a Jupyter Lab workspace running from the MPRAhub Singularity container, open a terminal and follow these commands to install our iSEEindex fork for launching iSEE-MPRAbase instances:
 
 ```bash
 cd /home/jovyan/ # Assumes user launched a JupyterLab workspace using the Singularity MPRAbase SIF
