@@ -1,7 +1,8 @@
 <!-- badges: start -->
 
+
 [![GitHub
-Issues](https://img.shields.io/github/issues/MPRAhub/MPRAorg-LibrarySuite)](https://github.com/MPRAhub/MPRAorg-LibrarySuite)
+issues](https://img.shields.io/github/issues/MPRAhub/MPRAorg-LibrarySuite)](https://github.com/MPRAhub/MPRAorg-LibrarySuite/issues)
 
 ![BuildStatus-MPRAhub](https://github.com/MPRAhub/MPRAorg-LibrarySuite/actions/workflows/build-MPRAhub.yml/badge.svg?event=push)
 
